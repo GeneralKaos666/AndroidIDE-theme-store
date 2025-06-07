@@ -8,6 +8,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
+import io.gitlab.arturbosch.detekt.Detekt
+
 plugins {
   alias(libs.plugins.android.application) apply false
   alias(libs.plugins.android.library) apply false
@@ -61,3 +63,30 @@ subprojects {
 }
 
 tasks.register<Delete>("clean") { delete(rootProject.layout.buildDirectory) }
+
+detekt {
+    toolVersion = DependencyVersions.Detekt
+    debug = true
+    parallel = true
+    autoCorrect = true
+    input = files("src/main/kotlin")
+}
+
+tasks.withType<Detekt> {
+    this.jvmTarget = "1.8"
+    this.classpath.setFrom(project.configurations.getByName("detekt"))
+    exclude("**/ignore/**")
+}
+
+val detektAll by tasks.registering(Detekt::class) {
+    this.description = "Runs over whole code base without the starting overhead for each module."
+    this.parallel = true
+    this.buildUponDefaultConfig = true
+    this.include("**/*.kt")
+    this.exclude("**/resources/**")
+    this.exclude("**/build/**")
+    this.exclude("**/*.kts")
+    this.exclude("**/ignore/**")
+    this.jvmTarget = "1.8"
+    this.classpath.setFrom(project.configurations.getByName("detekt"))
+}
