@@ -9,7 +9,6 @@ kotlin = "2.1.21"
 kotlinx-coroutines = "1.10.2"
 kotlinx-serialization-json = "1.8.1"
 ksp = "2.1.21-2.0.1"
-
 coreKtx = "1.16.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -28,6 +27,10 @@ okhttp-coroutines = "5.0.0-alpha.16"
 desugar_jdk_libs = "2.1.5"
 detekt = "1.23.8"
 room = "2.7.1"
+
+version-catalog = "1.0.0"
+versions-ben-manes = "0.52.0"
+aboutLibraries = "11.6.3"
 
 [libraries]
 # AndroidX
@@ -57,9 +60,7 @@ androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
-
 androidx-desugar = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
 
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
@@ -68,6 +69,9 @@ room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 coil-svg = { module = "io.coil-kt:coil-svg", version.ref = "coil" }
+
+aboutlibraries-core = { module = "com.mikepenz:aboutlibraries-core", version.ref = "aboutLibraries" }
+aboutlibraries-compose-m3 = { module = "com.mikepenz:aboutlibraries-compose-m3", version.ref = "aboutLibraries" }
 
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidCompiler" }
@@ -89,14 +93,16 @@ detekt-rules-compose = { module = "io.nlopez.compose.rules:detekt", version = "0
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
-androidLibrary = { id = "com.android.library", version.ref = "agp" }
-
+android-library = { id = "com.android.library", version.ref = "agp" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 room = { id = "androidx.room", version.ref = "room" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+version-catalog-update = { id = "nl.littlerobots.version-catalog-update", version.ref = "version-catalog" }
+versions-benmanes = { id = "com.github.ben-manes.versions", version.ref = "versions-ben-manes" }
+aboutlibraries = { id = "com.mikepenz.aboutlibraries.plugin", version.ref = "aboutLibraries" }
