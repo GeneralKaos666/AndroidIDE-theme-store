@@ -85,7 +85,7 @@ okhttp-coroutines = { module = "com.squareup.okhttp3:okhttp-coroutines", version
 
 detekt-gradle-plugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 detekt-formatter = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
-detekt-rules-compose = { module = "io.nlopez.compose.rules:detekt", version = "0.4.10" }
+detekt-rules-compose = { module = "io.nlopez.compose.rules:detekt", version = "0.4.22" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
