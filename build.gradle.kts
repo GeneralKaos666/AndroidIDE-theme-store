@@ -1,15 +1,25 @@
 import com.android.build.gradle.BaseExtension
+import com.android.build.gradle.BaseExtension
+
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 import org.jetbrains.kotlin.gradle.dsl.jvm.JvmTargetValidationMode
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
+
 plugins {
   alias(libs.plugins.android.application) apply false
   alias(libs.plugins.android.library) apply false
-  alias(libs.plugins.kotlin) apply false
+  alias(libs.plugins.kotlin.android) apply false
   alias(libs.plugins.kotlin.compose) apply false
   alias(libs.plugins.kotlin.serialization) apply false
+  alias(libs.plugins.kapt) apply false
+  alias(libs.plugins.ksp) apply false
+  alias(libs.plugins.hilt) apply false
+  alias(libs.plugins.detek) apply false
+  alias(libs.plugins.version.catalog.update) apply false
+  alias(libs.plugins.versions.ben.manes) apply false
   alias(libs.plugins.aboutlibraries) apply false
 }
 
