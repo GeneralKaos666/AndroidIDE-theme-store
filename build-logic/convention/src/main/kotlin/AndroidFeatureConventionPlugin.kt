@@ -27,23 +27,13 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
 
             val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
             dependencies {
-                /*
-                add("implementation", project(":core:common"))
-                add("implementation", project(":core:data"))
-                add("implementation", project(":core:domain"))
-                add("implementation", project(":core:ui"))
-                */
-
                 add("testImplementation", kotlin("test"))
                 add("androidTestImplementation", kotlin("test"))
-
                 add("implementation", libs.findLibrary("coil.kt").get())
                 add("implementation", libs.findLibrary("coil.kt.compose").get())
-
                 add("implementation", libs.findLibrary("androidx.hilt.navigation.compose").get())
                 add("implementation", libs.findLibrary("androidx.lifecycle.runtimeCompose").get())
                 add("implementation", libs.findLibrary("androidx.lifecycle.viewModelCompose").get())
-
                 add("implementation", libs.findLibrary("kotlinx.coroutines.android").get())
             }
         }

@@ -17,9 +17,7 @@ class AndroidHiltConventionPlugin : Plugin<Project> {
             val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
             dependencies {
                 "implementation"(libs.findLibrary("hilt.android").get())
-                //"kapt"(libs.findLibrary("hilt.compiler").get())
-                "ksp"(libs.findÖibrary("hilt.compiler").get())
-                //"kaptAndroidTest"(libs.findLibrary("hilt.compiler").get())
+                "ksp"(libs.findLibrary("hilt.compiler").get())
                 "kspAndroidTest"(libs.findLibrary("hilt.compiler").get())
             }
         }
