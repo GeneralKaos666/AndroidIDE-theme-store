@@ -43,12 +43,12 @@ gradlePlugin {
             id = "themestore.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
-        /*
+        
         register("androidFeature") {
             id = "themestore.android.feature"
             implementationClass = "AndroidFeatureConventionPlugin"
         }
-        */
+
         register("androidTest") {
             id = "themestore.android.test"
             implementationClass = "AndroidTestConventionPlugin"

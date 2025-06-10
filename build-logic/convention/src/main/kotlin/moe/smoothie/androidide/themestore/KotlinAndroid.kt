@@ -30,6 +30,7 @@ internal fun Project.configureKotlinAndroid(
             isCoreLibraryDesugaringEnabled = true
         }
     }
+
     configureKotlin()
 
     val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
@@ -44,6 +45,7 @@ internal fun Project.configureKotlinJvm() {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
     configureKotlin()
 }
 

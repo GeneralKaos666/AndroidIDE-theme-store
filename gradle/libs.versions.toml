@@ -1,9 +1,9 @@
 [versions]
 accompanist = "0.32.0"
-#androidDesugarJdkLibs = "2.0.4"
-androidDesugarJdkLibs = "2.1.5"
-#androidGradlePlugin = "8.2.0"
-androidGradlePlugin = "8.10.1"
+androidDesugarJdkLibs = "2.0.4"
+#androidDesugarJdkLibs = "2.1.5"
+androidGradlePlugin = "8.2.0"
+#androidGradlePlugin = "8.10.1"
 androidxAnnontation = "1.9.1"
 androidxActivity = "1.8.2"
 androidxAppCompat = "1.6.1"
@@ -79,7 +79,6 @@ androidx-compose-ui-testManifest = { group = "androidx.compose.ui", name = "ui-t
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
-
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
 androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "androidxCoreSplashscreen" }
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHiltNavigationCompose" }
