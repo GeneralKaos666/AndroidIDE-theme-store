@@ -1,23 +1,19 @@
+import moe.smoothie.androidide.themestore.ThemeStoreBuildType
+
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.compose.compiler)
-    id("com.google.dagger.hilt.android")
-    kotlin("kapt")
-//    kotlin("jvm")
-    kotlin("plugin.serialization")
+    id("themestore.android.application")
+    id("themestore.android.application.compose")
+    id("themestore.kotlin.detekt")
+    id("themestore.android.hilt")
 }
 
 android {
     namespace = "moe.smoothie.androidide.themestore"
-    compileSdk = 34
 
     defaultConfig {
         applicationId = "moe.smoothie.androidide.themestore"
-        minSdk = 26
-        targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -26,35 +22,74 @@ android {
     }
 
     buildTypes {
-        release {
-            isMinifyEnabled = false
+        val debug by getting {
+            applicationIdSuffix = ThemeStoreBuildType.DEBUG.applicationIdSuffix
+        }
+        
+        val release by getting {
+            isMinifyEnabled = true
+            applicationIdSuffix = ThemeStoreBuildType.RELEASE.applicationIdSuffix
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.15"
-    }
+
     packaging {
         resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes.add("/META-INF/{AL2.0,LGPL2.1}")
+        }
+    }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
         }
     }
 }
 
 dependencies {
+    /*
+    implementation(project(":core:common"))
+    implementation(project(":core:data"))
+    implementation(project(":core:designsystem"))
+    implementation(project(":core:ui"))
+    implementation(project(":ui:home"))
+    implementation(project(":ui:search"))
+    implementation(project(":ui:detail"))
+    implementation(project(":ui:convert"))
+    */
+    /*
+    implementation(libs.androidx.compose.material.iconsExtended)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.material3.windowSizeClass)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.compose.runtime.tracing)
+    implementation(libs.androidx.compose.runtime)
+    implementation(libs.androidx.lifecycle.runtimeCompose)
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.hilt.android)
+    
+    ksp(libs.hilt.compiler)
+
+    api(libs.junit4)
+    api(libs.androidx.test.core)
+    api(libs.kotlinx.coroutines.test)
+    api(libs.turbine)
+    api(libs.androidx.test.espresso.core)
+    api(libs.androidx.test.runner)
+    api(libs.androidx.test.rules)
+    api(libs.androidx.compose.ui.test)
+    api(libs.hilt.android.testing)
+    
+    debugApi(libs.androidx.compose.ui.testManifest)
+    */
+    
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -70,11 +105,12 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.coil.compose)
     implementation(libs.coil.svg)
-    implementation (libs.androidx.navigation.compose)
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.hilt.navigation.compose)
 
-    kapt(libs.hilt.android.compiler)
-
+    ksp(libs.hilt.compiler)
+    
+    /*
     testImplementation(libs.junit)
     testImplementation(libs.hilt.android.testing)
 
@@ -91,8 +127,5 @@ dependencies {
 
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-}
-
-kapt {
-    correctErrorTypes = true
+    */
 }
