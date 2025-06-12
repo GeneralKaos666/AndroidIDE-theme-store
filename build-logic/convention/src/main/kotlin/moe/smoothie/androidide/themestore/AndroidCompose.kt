@@ -33,7 +33,7 @@ internal fun Project.configureAndroidCompose(
     }
 
     tasks.withType<KotlinCompile>().configureEach {
-        kotlinOptions {
+        compileOptions {
             freeCompilerArgs = freeCompilerArgs + buildComposeMetricsParameters()
         }
     }

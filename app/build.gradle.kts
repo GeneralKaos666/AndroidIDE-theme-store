@@ -4,6 +4,7 @@ plugins {
     id("themestore.android.application")
     id("themestore.android.application.compose")
     id("themestore.kotlin.detekt")
+    alias(libs.plugins.ksp)
     id("themestore.android.hilt")
 }
 
