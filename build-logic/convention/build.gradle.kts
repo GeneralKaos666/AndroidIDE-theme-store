@@ -11,8 +11,11 @@ group = "moe.smoothie.androidide.themestore.buildlogic"
 
 tasks.withType<KotlinCompile>().configureEach {
     compilerOptions {
-        jvmTarget =  = JvmTarget.JVM_17
-        JavaVersion.VERSION_17.toString()
+      //apiVersion = KotlinVersion.KOTLIN_2_0
+      //languageVersion = KotlinVersion.KOTLIN_2_0
+      jvmTarget = JvmTarget.JVM_17
+      //jvmTargetValidationMode = JvmTargetValidationMode.WARNING
+      //freeCompilerArgs.add("-Xjvm-default=all")
     }
 }
 
