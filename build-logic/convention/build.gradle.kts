@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -7,8 +8,9 @@ plugins {
 group = "moe.smoothie.androidide.themestore.buildlogic"
 
 tasks.withType<KotlinCompile>().configureEach {
-    compileOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_17
+        //jvmTarget = JavaVersion.VERSION_17.toString()
     }
 }
 

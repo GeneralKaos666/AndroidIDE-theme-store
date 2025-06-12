@@ -109,7 +109,7 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.hilt.navigation.compose)
 
-    ksp(libs.hilt.compiler)
+    /0ksp(libs.hilt.compiler)
     
     /*
     testImplementation(libs.junit)
