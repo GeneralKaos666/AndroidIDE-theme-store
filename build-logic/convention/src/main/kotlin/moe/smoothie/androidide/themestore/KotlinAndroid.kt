@@ -32,7 +32,6 @@ internal fun Project.configureKotlinAndroid() {
           compileOptions {
               sourceCompatibility = JavaVersion.VERSION_17
               targetCompatibility = JavaVersion.VERSION_17
-      
               isCoreLibraryDesugaringEnabled = true
           }
       }
@@ -65,10 +64,16 @@ private fun Project.configureKotlin() {
             jvmTargetValidationMode = JvmTargetValidationMode.WARNING
             val warningsAsErrors: String? by project
             allWarningsAsErrors = warningsAsErrors.toBoolean()
+            freeCompilerArgs.add(
+            "-opt-in=kotlin.RequiresOptIn",
+            "-Xjvm-default=all"
+            )
+            /*
             freeCompilerArgs = freeCompilerArgs + listOf(
                 "-opt-in=kotlin.RequiresOptIn",
                 "-Xjvm-default=all"
             )
+            */
         }
     }
 }
