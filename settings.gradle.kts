@@ -17,6 +17,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "AndroidIDE Themes"
 
-include(
-    ":app"
-)
+include(":app")

@@ -5,6 +5,7 @@ plugins {
     id("themestore.android.application.compose")
     id("themestore.kotlin.detekt")
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.serialization)
     id("themestore.android.hilt")
 }
 
@@ -95,21 +96,21 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.graphics)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.compose.material3)
     implementation(libs.hilt.android)
     implementation(libs.okhttp)
     implementation(libs.okhttp.coroutines)
     implementation(libs.kotlinx.serialization.json)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.coil.compose)
-    implementation(libs.coil.svg)
+    implementation(libs.androidx.lifecycle.viewModelCompose)
+    implementation(libs.coil.kt.compose)
+    implementation(libs.coil.kt.svg)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.hilt.navigation.compose)
 
-    /0ksp(libs.hilt.compiler)
+    //ksp(libs.hilt.compiler)
     
     /*
     testImplementation(libs.junit)
