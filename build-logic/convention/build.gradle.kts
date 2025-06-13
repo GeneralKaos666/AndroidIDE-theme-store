@@ -1,4 +1,3 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -7,68 +6,39 @@ plugins {
 
 group = "moe.smoothie.androidide.themestore.buildlogic"
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
 tasks.withType<KotlinCompile>().configureEach {
-    compilerOptions {
-        jvmTarget = JvmTarget.JVM_17
-        //jvmTarget = JavaVersion.VERSION_17.toString()
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 }
 
-kotlin {
-    jvmToolchain(17)
-}
-
 dependencies {
-    compileOnly(libs.android.gradlePlugin)
-    compileOnly(libs.kotlin.gradlePlugin)
-    compileOnly(libs.detekt.gradlePlugin)
+    compileOnly(libs.android.gradle.plugin)
+    compileOnly(libs.kotlin.gradle.plugin)
+    compileOnly(libs.spotless.gradle.plugin)
 }
 
 gradlePlugin {
     plugins {
-        register("androidApplicationCompose") {
-            id = "themestore.android.application.compose"
-            implementationClass = "AndroidApplicationComposeConventionPlugin"
+        register("apkanalyzer.hilt") {
+            id = "apkanalyzer.hilt"
+            implementationClass = "HiltPlugin"
         }
-
-        register("androidApplication") {
-            id = "themestore.android.application"
-            implementationClass = "AndroidApplicationConventionPlugin"
+        register("apkanalyzer.library") {
+            id = "apkanalyzer.library"
+            implementationClass = "LibraryPlugin"
         }
-
-        register("androidLibraryCompose") {
-            id = "themestore.android.library.compose"
-            implementationClass = "AndroidLibraryComposeConventionPlugin"
+        register("apkanalyzer.application") {
+            id = "apkanalyzer.application"
+            implementationClass = "ApplicationPlugin"
         }
-
-        register("androidLibrary") {
-            id = "themestore.android.library"
-            implementationClass = "AndroidLibraryConventionPlugin"
-        }
-        
-        register("androidFeature") {
-            id = "themestore.android.feature"
-            implementationClass = "AndroidFeatureConventionPlugin"
-        }
-
-        register("androidTest") {
-            id = "themestore.android.test"
-            implementationClass = "AndroidTestConventionPlugin"
-        }
-
-        register("androidHilt") {
-            id = "themestore.android.hilt"
-            implementationClass = "AndroidHiltConventionPlugin"
-        }
-
-        register("jvmLibrary") {
-            id = "volution.jvm.library"
-            implementationClass = "JvmLibraryConventionPlugin"
-        }
-
-        register("kotlinDetekt") {
-            id = "themestore.kotlin.detekt"
-            implementationClass = "DetektConventionPlugin"
+        register("apkanalyzer.spotless") {
+            id = "apkanalyzer.spotless"
+            implementationClass = "SpotlessPlugin"
         }
     }
 }
