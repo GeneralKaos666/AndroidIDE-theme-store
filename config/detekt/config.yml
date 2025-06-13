@@ -33,6 +33,7 @@ processors:
 
 console-reports:
   active: true
+  import com.client.coincap.configureDetekt
   exclude:
     - 'ProjectStatisticsReport'
     - 'ComplexityReport'
@@ -46,7 +47,7 @@ output-reports:
   exclude:
   # - 'TxtOutputReport'
   # - 'XmlOutputReport'
-  # - 'HtmlOutputReport'
+  - 'HtmlOutputReport'
   # - 'MdOutputReport'
   # - 'SarifOutputReport'
 

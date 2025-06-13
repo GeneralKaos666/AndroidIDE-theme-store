@@ -1,12 +1,10 @@
-import moe.smoothie.androidide.themestore.ThemeStoreBuildType
-
 plugins {
-    id("themestore.android.application")
-    id("themestore.android.application.compose")
-    id("themestore.kotlin.detekt")
+    id("themestore.application")
+    id("themestore.hilt")
+    id("themestore.spotless")
+    id("themestore.detekt")
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlin.serialization)
-    id("themestore.android.hilt")
 }
 
 android {
@@ -21,6 +19,13 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+    }
+    
+    buildFeatures {
+        compose = true
+        viewBinding = true
+        //dataBinding = true
+        buildConfig = true
     }
 
     buildTypes {
@@ -48,6 +53,10 @@ android {
         unitTests {
             isIncludeAndroidResources = true
         }
+    }
+    
+    lint {
+        disable += "MissingTranslation"
     }
 }
 

@@ -17,28 +17,37 @@ tasks.withType<KotlinCompile>().configureEach {
 }
 
 dependencies {
-    compileOnly(libs.android.gradle.plugin)
-    compileOnly(libs.kotlin.gradle.plugin)
-    compileOnly(libs.spotless.gradle.plugin)
+    compileOnly(libs.android.gradlePlugin)
+    compileOnly(libs.kotlin.gradlePlugin)
+    compileOnly(libs.spotless.gradlePlugin)
+    compileOnly(libs.detekt.gradlePlugin)
 }
 
 gradlePlugin {
     plugins {
-        register("apkanalyzer.hilt") {
-            id = "apkanalyzer.hilt"
+        register("themestore.hilt") {
+            id = "themestore.hilt"
             implementationClass = "HiltPlugin"
         }
-        register("apkanalyzer.library") {
-            id = "apkanalyzer.library"
+        register("themestore.library") {
+            id = "themestore.library"
             implementationClass = "LibraryPlugin"
         }
-        register("apkanalyzer.application") {
-            id = "apkanalyzer.application"
+        register("themestore.application") {
+            id = "themestore.application"
             implementationClass = "ApplicationPlugin"
         }
-        register("apkanalyzer.spotless") {
-            id = "apkanalyzer.spotless"
+        register("themestore.spotless") {
+            id = "themestore.spotless"
             implementationClass = "SpotlessPlugin"
+        }
+        register("themestore.detekt") {
+            id = "themestore.detekt"
+            implementationClass = "detektPlugin"
+        }
+        register("themestore.ksp") {
+            id = "themestore.ksp"
+            implementationClass = "kspPlugin"
         }
     }
 }
