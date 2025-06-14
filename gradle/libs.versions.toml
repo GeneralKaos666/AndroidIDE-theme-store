@@ -1,8 +1,6 @@
 [versions]
 accompanist = "0.37.0"
-#androidDesugarJdkLibs = "2.0.4"
 androidDesugarJdkLibs = "2.1.5"
-#androidGradlePlugin = "8.2.0"
 androidGradlePlugin = "8.9.0"
 androidxLintGradle = "1.0.0-alpha03"
 androidTools = "31.10.1"
@@ -20,7 +18,6 @@ androidxCoreSplashscreen = "1.0.1"
 androidxEspresso = "3.6.1"
 androidxHiltNavigationCompose = "1.2.0"
 androidxLifecycle = "2.9.1"
-#androidxLifecycle = "2.9.1"
 androidxNavigation = "2.9.0"
 androidxMetrics = "1.0.0-beta02"
 androidxProfileinstaller = "1.4.1"
@@ -37,8 +34,6 @@ hilt = "2.56.2"
 hiltExt = "1.2.0"
 jacoco = "0.8.7"
 junit4 = "4.13.2"
-#kotlin = "1.9.21"
-#kotlinxCoroutines = "1.7.3"
 ksp = "2.1.21-2.0.2"
 kotlin = "2.1.21"
 kotlinx-coroutines = "1.10.2"
@@ -49,9 +44,7 @@ retrofit = "3.0.0"
 okhttp = "4.12.0"
 okhttp-coroutines = "5.0.0-alpha.16"
 gson = "2.13.1"
-#room = "2.6.1"
 room = "2.7.1"
-#detekt = "1.23.3"
 detekt = "1.23.8"
 spotless = "7.0.4"
 ktfmt = "0.54"
@@ -120,6 +113,7 @@ androidx-test-uiautomator = { group = "androidx.test.uiautomator", name = "uiaut
 androidx-tracing-ktx = {group = "androidx.tracing", name="tracing-ktx", version.ref = "androidxTracing" }
 androidx-work-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "androidxWork" }
 androidx-work-testing = { group = "androidx.work", name = "work-testing", version.ref = "androidxWork" }
+
 coil-kt = { group = "io.coil-kt", name = "coil", version.ref = "coil"}
 coil-kt-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil"}
 coil-kt-svg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil"}
@@ -132,7 +126,6 @@ hilt-core = { group = "com.google.dagger", name = "hilt-core", version.ref = "hi
 hilt-ext-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hiltExt" }
 hilt-ext-work = { group = "androidx.hilt", name = "hilt-work", version.ref = "hiltExt" }
 javax-inject = { module = "javax.inject:javax.inject", version = "1" }
-
 junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
 
 # kotlin
@@ -169,7 +162,7 @@ compose-gradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 room-gradlePlugin = { group = "androidx.room", name = "room-gradle-plugin", version.ref = "room" }
-kotlin-detekt-gradlePlugin = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
+detekt-gradlePlugin = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
 detekt-formatting = { group = "io.gitlab.arturbosch.detekt", name = "detekt-formatting", version.ref = "detekt" }
 spotless-gradlePlugin = { group = "com.diffplug.spotless", name = "spotless-plugin-gradle", version.ref = "spotless" }
 ktfmt = { module = "com.facebook:ktfmt", version.ref = "ktfmt" }
@@ -200,7 +193,6 @@ spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 # Plugins defined by this project
 themestore-android-application = { id = "themestore.android.application" }
 themestore-android-application-compose = { id = "themestore.android.application.compose" }
-#themestore-android-application-firebase = { id = "themestore.android.application.firebase" }
 themestore-android-application-flavors = { id = "themestore.android.application.flavors" }
 themestore-android-application-jacoco = { id = "themestore.android.application.jacoco" }
 themestore-android-feature = { id = "themestore.android.feature" }
@@ -211,6 +203,6 @@ themestore-android-lint = { id = "themestore.android.lint" }
 themestore-android-room = { id = "themestore.android.room" }
 themestore-android-test = { id = "themestore.android.test" }
 themestore-hilt = { id = "themestore.hilt" }
-themestore-detekt = { id = "themestore.detekt" }
+themestore-kotlin-detekt = { id = "themestore.kotlin.detekt" }
 themestore-spotless = { id = "themestore.spotless" }
 themestore-jvm-library = { id = "themestore.jvm.library" }
