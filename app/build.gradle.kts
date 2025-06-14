@@ -6,8 +6,8 @@ plugins {
     alias(libs.plugins.themestore.hilt)
     alias(libs.plugins.ksp)
     alias(libs.plugins.room)
-    alias(libs.plugins.spotless)
-    alias(libs.plugins.kotlin.detekt)
+    //alias(libs.plugins.spotless)
+    //alias(libs.plugins.kotlin.detekt)
     alias(libs.plugins.kotlin.serialization)
 }
 
@@ -25,25 +25,21 @@ android {
         }
     }
     
-    buildFeatures {
-        compose = true
-        viewBinding = true
-        //dataBinding = true
-        buildConfig = true
-    }
-
     buildTypes {
-        val debug by getting {
-            applicationIdSuffix = ThemeStoreBuildType.DEBUG.applicationIdSuffix
+        debug {
+            applicationIdSuffix = BuildType.DEBUG.applicationIdSuffix
         }
-        
-        val release by getting {
+        release {
             isMinifyEnabled = true
-            applicationIdSuffix = ThemeStoreBuildType.RELEASE.applicationIdSuffix
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            applicationIdSuffix = BuildType.RELEASE.applicationIdSuffix
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
+
+            // To publish on the Play store a private signing key is required, but to allow anyone
+            // who clones the code to sign and run the release variant, use the debug signing key.
+            // TODO: Abstract the signing configuration to a separate file to avoid hardcoding this.
+            signingConfig = signingConfigs.named("debug").get()
+            // Ensure Baseline Profile is fresh for release builds.
+            baselineProfile.automaticGenerationDuringBuild = true
         }
     }
 
@@ -52,15 +48,10 @@ android {
             excludes.add("/META-INF/{AL2.0,LGPL2.1}")
         }
     }
-
     testOptions {
         unitTests {
             isIncludeAndroidResources = true
         }
-    }
-    
-    lint {
-        disable += "MissingTranslation"
     }
 }
 

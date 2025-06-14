@@ -27,7 +27,7 @@ dependencies {
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.ksp.gradlePlugin)
     compileOnly(libs.room.gradlePlugin)
-    compileOnly(libs.kotlin.detek.gradlePlugin)
+    //compileOnly(libs.kotlin.detek.gradlePlugin)
     lintChecks(libs.androidx.lint.gradle)
 }
 
@@ -80,10 +80,12 @@ gradlePlugin {
             id = libs.plugins.themestore.android.room.get().pluginId
             implementationClass = "AndroidRoomConventionPlugin"
         }
+        /*
         register("kotlinDetekt") {
             id = libs.plugins.themestore.kotlin.detekt.get().pluginId
             implementationClass = "KotlinDetektConventionPlugin"
         }
+        */
         register("androidFlavors") {
             id = libs.plugins.themestore.android.application.flavors.get().pluginId
             implementationClass = "AndroidApplicationFlavorsConventionPlugin"
