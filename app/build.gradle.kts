@@ -7,7 +7,7 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.room)
     //alias(libs.plugins.spotless)
-    //alias(libs.plugins.kotlin.detekt)
+    alias(libs.plugins.kotlin.detekt)
     alias(libs.plugins.kotlin.serialization)
 }
 

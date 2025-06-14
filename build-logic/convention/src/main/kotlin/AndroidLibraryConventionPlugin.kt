@@ -1,4 +1,4 @@
-package moe.smoothie.androidide.themestore.convention
+//package moe.smoothie.androidide.themestore.convention
 
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
 import com.android.build.gradle.LibraryExtension

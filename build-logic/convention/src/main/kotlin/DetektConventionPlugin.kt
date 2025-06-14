@@ -1,6 +1,6 @@
-package moe.smoothie.androidide.themestore.convention
+//package moe.smoothie.androidide.themestore.convention
 
-import io.gitlab.arturbosch.detekt.extensions.DetektExtension
+//import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project

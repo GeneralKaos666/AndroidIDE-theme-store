@@ -1,9 +1,9 @@
-package moe.smoothie.androidide.themestore.convention
+//package moe.smoothie.androidide.themestore.convention
 
 import com.android.build.gradle.TestExtension
 
 //import moe.smoothie.androidide.themestore.configureGradleManagedDevices
-import moe.smoothie.androidide.themestore.configureKotlinAndroid
+import moe.smoothie.androidide.themestore.convention.configureKotlinAndroid
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
