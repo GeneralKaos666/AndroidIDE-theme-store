@@ -1,3 +1,5 @@
+package moe.smoothie.androidide.themestore.convention
+
 import com.android.build.api.dsl.ApplicationExtension
 
 import org.gradle.api.Plugin
@@ -17,9 +19,11 @@ class ApplicationPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.android.application")
                 apply("org.jetbrains.kotlin.android")
+                /*
                 apply("com.google.gms.google-services")
                 apply("com.google.firebase.firebase-perf")
                 apply("com.google.firebase.crashlytics")
+                */
             }
 
             extensions.configure<ApplicationExtension> {
@@ -28,10 +32,14 @@ class ApplicationPlugin : Plugin<Project> {
                     compileSdk = TargetSdk
                     minSdk = MinSdk
 
-                    multiDexEnabled = true
+                    //multiDexEnabled = true
                     vectorDrawables.useSupportLibrary = true
+                }
+                /*
+                compileOptions {
                     isCoreLibraryDesugaringEnabled = true
                 }
+                */
 
                 buildTypes {
                     getByName("release") {
@@ -49,6 +57,7 @@ class ApplicationPlugin : Plugin<Project> {
 
 
             val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
+            /*
             dependencies {
                 val bom = libs.findLibrary("firebase-bom").get()
                 add("implementation", platform(bom))
@@ -56,6 +65,7 @@ class ApplicationPlugin : Plugin<Project> {
                 "implementation"(libs.findLibrary("firebase.performance").get())
                 "implementation"(libs.findLibrary("firebase.crashlytics").get())
             }
+            */
         }
     }
 }

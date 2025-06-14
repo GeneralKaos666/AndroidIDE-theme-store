@@ -1,3 +1,5 @@
+package moe.smoothie.androidide.themestore.convention
+
 import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 
 import org.gradle.api.Plugin
@@ -8,7 +10,7 @@ import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.configure
 
 /**
- * Configures the detekt plugin.
+ * Configures the detekt plugin
  */
  class DetektPlugin : Plugin<Project> {
     override fun apply(target: Project) {

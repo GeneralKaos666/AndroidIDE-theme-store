@@ -1,9 +1,9 @@
 plugins {
     id("themestore.application")
+    id("themestore.library")
     id("themestore.hilt")
     id("themestore.spotless")
     id("themestore.detekt")
-    alias(libs.plugins.ksp)
     alias(libs.plugins.kotlin.serialization)
 }
 

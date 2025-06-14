@@ -1,3 +1,5 @@
+package moe.smoothie.androidide.themestore.convention
+
 import com.diffplug.gradle.spotless.SpotlessExtension
 
 import org.gradle.api.Plugin
@@ -12,12 +14,29 @@ class SpotlessPlugin : Plugin<Project> {
                 apply("com.diffplug.spotless")
             }
             extensions.configure<SpotlessExtension> {
-                kotlin {
-                    target("**/*.kt")
-                    targetExclude("${layout.buildDirectory}/**/*.kt")
-                    targetExclude("bin/**/*.kt")
-                    ktlint("0.48.2")
+                format("misc") {
+                    formatExtension -> with(formatExtension) {
+                        target("*.md", ".gitignore")
+                        trimTrailingWhitespace()
+                        endWithNewline()
+                    }
                 }
+                kotlin { kotlinExtension -> with(kotlinExtension) {
+                ktfmt(ktfmtVersion).kotlinlangStyle()
+                trimTrailingWhitespace()
+                endWithNewline()
+                licenseHeaderFile(file("$rootDir/spotless/spotless.kt"))
+            }
+        }
+        kotlinGradle { kotlinGradleExtension ->
+            with(kotlinGradleExtension) {
+                ktfmt(ktfmtVersion).kotlinlangStyle()
+                trimTrailingWhitespace()
+                endWithNewline()
+                licenseHeaderFile(
+                    file("$rootDir/spotless/spotless.kt"),
+                    "(import|plugins|buildscript|dependencies|pluginManagement)",
+                )
             }
         }
     }

@@ -19,6 +19,7 @@ tasks.withType<KotlinCompile>().configureEach {
 dependencies {
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
+    compileOnly(libs.kotlin.jvm.gradlePlugin)
     compileOnly(libs.spotless.gradlePlugin)
     compileOnly(libs.detekt.gradlePlugin)
 }
@@ -44,10 +45,6 @@ gradlePlugin {
         register("themestore.detekt") {
             id = "themestore.detekt"
             implementationClass = "detektPlugin"
-        }
-        register("themestore.ksp") {
-            id = "themestore.ksp"
-            implementationClass = "kspPlugin"
         }
     }
 }
