@@ -7,7 +7,7 @@ import com.android.build.gradle.BaseExtension
 //import com.google.samples.apps.nowinandroid.configureBadgingTasks
 //import com.google.samples.apps.nowinandroid.configureGradleManagedDevices
 import moe.smoothie.androidide.themestore.convention.configureKotlinAndroid
-import com.google.samples.apps.nowinandroid.configurePrintApksTask
+import moe.smoothie.androidide.themestore.convention.configurePrintApksTask
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
