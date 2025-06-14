@@ -1,3 +1,5 @@
+package moe.smoothie.androidide.themestore.convention
+
 import moe.smoothie.androidide.themestore.convention..configureKotlinJvm
 import moe.smoothie.androidide.themestore.convention..libs
 

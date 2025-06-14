@@ -1,3 +1,5 @@
+package moe.smoothie.androidide.themestore.convention
+
 import com.android.build.gradle.api.AndroidBasePlugin
 
 import moe.smoothie.androidide.themestore.convention.libs

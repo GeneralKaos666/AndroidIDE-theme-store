@@ -1,3 +1,5 @@
+package moe.smoothie.androidide.themestore.convention
+
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
 import com.android.build.gradle.BaseExtension
@@ -24,6 +26,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             extensions.configure<ApplicationExtension> {
                 configureKotlinAndroid(this)
                 defaultConfig.targetSdk = 35
+                defaultConfig.compileSdk = 35
                 @Suppress("UnstableApiUsage")
                 testOptions.animationsDisabled = true
                 //configureGradleManagedDevices(this)

@@ -1,3 +1,5 @@
+package moe.smoothie.androidide.themestore.convention
+
 import com.android.build.api.dsl.ApplicationExtension
 
 import moe.smoothie.androidide.themestore.convention.configureAndroidCompose

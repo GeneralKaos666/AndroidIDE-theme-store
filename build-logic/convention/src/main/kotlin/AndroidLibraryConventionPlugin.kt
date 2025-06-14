@@ -1,3 +1,5 @@
+package moe.smoothie.androidide.themestore.convention
+
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
 import com.android.build.gradle.LibraryExtension
 
@@ -25,6 +27,8 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)
                 defaultConfig.targetSdk = 35
+                defaultConfig.compileSdk = 35
+                
                 defaultConfig.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 testOptions.animationsDisabled = true
                 //configureFlavors(this)
