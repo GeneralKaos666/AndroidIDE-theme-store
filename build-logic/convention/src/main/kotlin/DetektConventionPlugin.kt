@@ -12,7 +12,7 @@ import org.gradle.kotlin.dsl.configure
 /**
  * Configures the detekt plugin
  */
- class DetektPlugin : Plugin<Project> {
+ class DetektConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {

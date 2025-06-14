@@ -1,9 +1,11 @@
 plugins {
-    id("themestore.application")
-    id("themestore.library")
-    id("themestore.hilt")
-    id("themestore.spotless")
-    id("themestore.detekt")
+    alias(libs.plugins.themestore.android.application)
+    alias(libs.plugins.themestore.android.application.compose)
+    alias(libs.plugins.themestore.hilt)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.room)
+    alias(libs.plugins.spotless)
+    alias(libs.plugins.detekt)
     alias(libs.plugins.kotlin.serialization)
 }
 
@@ -118,15 +120,13 @@ dependencies {
     implementation(libs.coil.kt.svg)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.hilt.navigation.compose)
-
-    //ksp(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
     
-    /*
     testImplementation(libs.junit)
     testImplementation(libs.hilt.android.testing)
-
     kaptTest(libs.hilt.compiler)
-
+    
+    /*
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
