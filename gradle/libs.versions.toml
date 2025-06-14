@@ -2,8 +2,8 @@
 accompanist = "0.37.0"
 #androidDesugarJdkLibs = "2.0.4"
 androidDesugarJdkLibs = "2.1.5"
-#androidGradlePlugin = "8.2.0"
-androidGradlePlugin = "8.9.0"
+androidGradlePlugin = "8.2.0"
+#androidGradlePlugin = "8.9.0"
 #androidGradlePlugin = "8.10.1"
 #androidxLintGradle = "1.0.0-alpha03"
 androidTools = "31.9.0"
@@ -202,11 +202,11 @@ themestore-android-application = { id = "themestore.android.application" }
 themestore-android-application-compose = { id = "themestore.android.application.compose" }
 #themestore-android-application-firebase = { id = "themestore.android.application.firebase" }
 themestore-android-application-flavors = { id = "themestore.android.application.flavors" }
-#themestore-android-application-jacoco = { id = "themestore.android.application.jacoco" }
+themestore-android-application-jacoco = { id = "themestore.android.application.jacoco" }
 themestore-android-feature = { id = "themestore.android.feature" }
 themestore-android-library = { id = "themestore.android.library" }
 themestore-android-library-compose = { id = "themestore.android.library.compose" }
-#themestore-android-library-jacoco = { id = "themestore.android.library.jacoco" }
+themestore-android-library-jacoco = { id = "themestore.android.library.jacoco" }
 themestore-android-lint = { id = "themestore.android.lint" }
 themestore-android-room = { id = "themestore.android.room" }
 themestore-android-test = { id = "themestore.android.test" }
