@@ -1,11 +1,13 @@
 plugins {
     alias(libs.plugins.themestore.android.application)
     alias(libs.plugins.themestore.android.application.compose)
+    alias(libs.plugins.themestore.android.application.flavors)
+    alias(libs.plugins.themestore.android.application.jacoco)
     alias(libs.plugins.themestore.hilt)
     alias(libs.plugins.ksp)
     alias(libs.plugins.room)
     alias(libs.plugins.spotless)
-    alias(libs.plugins.detekt)
+    alias(libs.plugins.kotlin.detekt)
     alias(libs.plugins.kotlin.serialization)
 }
 

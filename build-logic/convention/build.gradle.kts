@@ -80,7 +80,7 @@ gradlePlugin {
             id = libs.plugins.themestore.android.room.get().pluginId
             implementationClass = "AndroidRoomConventionPlugin"
         }
-        register("androidFirebase") {
+        register("kotlinDetekt") {
             id = libs.plugins.themestore.kotlin.detekt.get().pluginId
             implementationClass = "KotlinDetektConventionPlugin"
         }
