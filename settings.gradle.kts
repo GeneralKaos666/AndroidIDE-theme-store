@@ -26,7 +26,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "AndroidIDE Themes"
+rootProject.name = "AndroidIDE-Themes"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
