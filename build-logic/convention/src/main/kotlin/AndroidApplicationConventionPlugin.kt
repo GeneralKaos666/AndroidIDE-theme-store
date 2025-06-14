@@ -7,7 +7,7 @@ import com.android.build.gradle.BaseExtension
 //import com.google.samples.apps.nowinandroid.configureBadgingTasks
 //import com.google.samples.apps.nowinandroid.configureGradleManagedDevices
 import moe.smoothie.androidide.themestore.convention.configureKotlinAndroid
-//import com.google.samples.apps.nowinandroid.configurePrintApksTask
+import com.google.samples.apps.nowinandroid.configurePrintApksTask
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -21,7 +21,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             apply(plugin = "com.android.application")
             apply(plugin = "org.jetbrains.kotlin.android")
             apply(plugin = "themestore.android.lint")
-            apply(plugin = "com.dropbox.dependency-guard")
+            //apply(plugin = "com.dropbox.dependency-guard")
 
             extensions.configure<ApplicationExtension> {
                 configureKotlinAndroid(this)
@@ -31,8 +31,8 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 //configureGradleManagedDevices(this)
             }
             extensions.configure<ApplicationAndroidComponentsExtension> {
-                //configurePrintApksTask(this)
-                configureBadgingTasks(extensions.getByType<BaseExtension>(), this)
+                configurePrintApksTask(this)
+                //configureBadgingTasks(extensions.getByType<BaseExtension>(), this)
             }
         }
     }

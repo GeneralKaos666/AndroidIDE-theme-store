@@ -2,11 +2,10 @@ package moe.smoothie.androidide.themestore.convention
 
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
 import com.android.build.gradle.LibraryExtension
-
-//import moe.smoothie.androidide.themestore.convention.configureFlavors
+import moe.smoothie.androidide.themestore.convention.configureFlavors
 //import moe.smoothie.androidide.themestore.convention.configureGradleManagedDevices
 import moe.smoothie.androidide.themestore.convention.configureKotlinAndroid
-//import moe.smoothie.androidide.themestore.convention.configurePrintApksTask
+import moe.smoothie.androidide.themestore.convention.configurePrintApksTask
 import moe.smoothie.androidide.themestore.convention.disableUnnecessaryAndroidTests
 import moe.smoothie.androidide.themestore.convention.libs
 
@@ -30,7 +29,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 
                 defaultConfig.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 testOptions.animationsDisabled = true
-                //configureFlavors(this)
+                configureFlavors(this)
                 //configureGradleManagedDevices(this)
                 // The resource prefix is derived from the module name,
                 // so resources inside ":core:module1" must be prefixed with "core_module1_"
