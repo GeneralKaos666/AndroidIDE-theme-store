@@ -37,27 +37,42 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import moe.smoothie.androidide.themestore.R
+import moe.smoothie.androidide.themestore.ThemeActivity
+import moe.smoothie.androidide.themestore.model.StoreType
 import moe.smoothie.androidide.themestore.ui.theme.AndroidIDEThemesTheme
 import moe.smoothie.androidide.themestore.util.formatNumber
+import android.content.Intent
+import android.os.Parcelable
+import androidx.compose.ui.platform.LocalContext
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class MicrosoftStoreCardState(
     val iconUrl: String,
     val name: String,
+    val downloadUrl: String,
     val developerName: String,
     val developerWebsite: String?,
     val developerWebsiteVerified: Boolean,
     val downloads: Long,
     val description: String,
     val rating: Float
-)
+) : Parcelable
 
 @Composable
 fun MicrosoftStoreCard(state: MicrosoftStoreCardState) {
     val spacing = 8.dp
+    val context = LocalContext.current
 
     OutlinedCard(
         modifier = Modifier.fillMaxWidth(),
-        onClick = { }
+        onClick = {
+            val intent = Intent(context, ThemeActivity::class.java)
+            intent.putExtra(ThemeActivity.EXTRA_THEME_STATE, state)
+            intent.putExtra(ThemeActivity.EXTRA_STORE_TYPE, StoreType.MICROSOFT)
+            // intent.putExtra(ThemeActivity.EXTRA_THEME_URL, state.downloadUrl) // Will be added later
+            context.startActivity(intent)
+        }
     ) {
         Column(
             modifier = Modifier
@@ -170,6 +185,7 @@ internal fun Preview(
                 MicrosoftStoreCardState(
                     iconUrl = "https://example.com/exampple.png",
                     name = name,
+                    downloadUrl = "https://example.com/download",
                     developerName = "Microsoft",
                     developerWebsite = "microsoft.com",
                     developerWebsiteVerified = true,
