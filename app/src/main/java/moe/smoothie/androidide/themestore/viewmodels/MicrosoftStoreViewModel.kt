@@ -84,10 +84,16 @@ class MicrosoftStoreViewModel @Inject constructor(
 
                     mutableItems.update { list ->
                         list + data!!.results.first().extensions.map { extension ->
+                            val versionFiles = extension.versions.first().files
+                            val iconUrl = versionFiles.find {
+                                it.assetType == "Microsoft.VisualStudio.Services.Icons.Default"
+                            }?.source ?: ""
+                            val downloadUrl = versionFiles.find {
+                                it.assetType == "Microsoft.VisualStudio.Services.VSIXPackage" // Key for VSIX
+                            }?.source ?: ""
+
                             MicrosoftStoreCardState(
-                                iconUrl = extension.versions.first().files.find {
-                                    it.assetType == "Microsoft.VisualStudio.Services.Icons.Default"
-                                }?.source ?: "",
+                                iconUrl = iconUrl,
                                 name = extension.displayName,
                                 developerName = extension.publisher.displayName,
                                 developerWebsite = extension.publisher.domain,
@@ -98,7 +104,8 @@ class MicrosoftStoreViewModel @Inject constructor(
                                 description = extension.shortDescription,
                                 rating = extension.statistics.find {
                                     it.statisticName == "averagerating"
-                                }?.value.toString().toFloatOrNull() ?: 0f
+                                }?.value.toString().toFloatOrNull() ?: 0f,
+                                downloadUrl = downloadUrl // Populate the new field
                             )
                         }
                     }

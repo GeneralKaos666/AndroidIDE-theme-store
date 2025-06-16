@@ -27,18 +27,23 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.SubcomposeAsyncImage
+import kotlinx.parcelize.Parcelize
 import moe.smoothie.androidide.themestore.R
 import moe.smoothie.androidide.themestore.ThemeActivity
+import moe.smoothie.androidide.themestore.model.StoreType
 import moe.smoothie.androidide.themestore.ui.theme.AndroidIDEThemesTheme
 import moe.smoothie.androidide.themestore.util.formatNumber
+import android.os.Parcelable
 
+@Parcelize
 data class JetbrainsThemeCardState(
     val previewUrl: String,
     val name: String,
     val rating: Float,
     val downloads: Long,
-    val trimmedDescription: String
-)
+    val trimmedDescription: String,
+    val downloadUrl: String
+) : Parcelable
 
 @Composable
 fun JetbrainsThemeCard(state: JetbrainsThemeCardState) {
@@ -49,7 +54,10 @@ fun JetbrainsThemeCard(state: JetbrainsThemeCardState) {
 
     OutlinedCard(
         onClick = {
-            context.startActivity(Intent(context, ThemeActivity::class.java))
+            val intent = Intent(context, ThemeActivity::class.java)
+            intent.putExtra(ThemeActivity.EXTRA_THEME_STATE, state)
+            intent.putExtra(ThemeActivity.EXTRA_STORE_TYPE, StoreType.JETBRAINS)
+            context.startActivity(intent)
         },
         modifier = Modifier.fillMaxWidth()
     ) {
@@ -143,12 +151,13 @@ internal fun JetbrainsThemeCardPreview(themeName: String = "One Dark Pro Theme")
         Box(modifier = Modifier.width(300.dp)) {
             JetbrainsThemeCard(
                 JetbrainsThemeCardState(
-                previewUrl = "https://example.com", // Images do not load in previews
-                name = themeName,
-                rating = 4.3f,
-                downloads = 1_234_567,
-                trimmedDescription = "One Dark theme for JetBrains. Do you need help? Please check the docs FAQs to see if we can solve your problem. If that does not fix your problem, please submit an..."
-            )
+                    previewUrl = "https://example.com", // Images do not load in previews
+                    name = themeName,
+                    rating = 4.3f,
+                    downloads = 1_234_567,
+                    trimmedDescription = "One Dark theme for JetBrains. Do you need help? Please check the docs FAQs to see if we can solve your problem. If that does not fix your problem, please submit an...",
+                    downloadUrl = "https://example.com/download"
+                )
             )
         }
     }

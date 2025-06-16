@@ -77,12 +77,14 @@ class JetbrainsStoreViewModel @Inject constructor(
 
                     mutableItems.update { list ->
                         list + data.plugins.map { plugin ->
+                            val downloadUrl = "https://plugins.jetbrains.com/plugin/download?pluginId=${plugin.xmlId}"
                             JetbrainsThemeCardState(
                                 previewUrl = basePreviewUrl + plugin.previewImage,
                                 name = plugin.name,
                                 rating = plugin.rating,
                                 downloads = plugin.downloads,
-                                trimmedDescription = plugin.preview
+                                trimmedDescription = plugin.preview,
+                                downloadUrl = downloadUrl
                             )
                         }
                     }
