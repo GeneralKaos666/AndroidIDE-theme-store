@@ -3,6 +3,11 @@ buildscript {
         google()
         mavenCentral()
     }
+    dependencies {
+        classpath(libs.google.services.plugin)
+        classpath(libs.firebase.perf.plugin)
+        classpath(libs.firebase.crashlytics.plugin)
+    }
 }
 
 plugins {

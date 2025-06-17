@@ -52,6 +52,7 @@ class ApplicationPlugin : Plugin<Project> {
             dependencies {
                 val bom = libs.findLibrary("firebase-bom").get()
                 add("implementation", platform(bom))
+                add("coreLibraryDesugaring", libs.findLibrary("android.desugarJdkLibs").get())
                 "implementation"(libs.findLibrary("firebase.analytics").get())
                 "implementation"(libs.findLibrary("firebase.performance").get())
                 "implementation"(libs.findLibrary("firebase.crashlytics").get())
