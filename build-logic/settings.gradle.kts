@@ -1,6 +1,19 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+    }
+}
+
 dependencyResolutionManagement {
     repositories {
-        google()
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
         mavenCentral()
     }
     versionCatalogs {
@@ -9,6 +22,7 @@ dependencyResolutionManagement {
         }
     }
 }
+
 
 rootProject.name = "build-logic"
 include(":convention")
