@@ -5,7 +5,10 @@ plugins {
     id("themestore.detekt")
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.kotlinComposeCompiler)
 }
+
+import moe.smoothie.androidide.themestore.build.ThemeStoreBuildType
 
 android {
     namespace = "moe.smoothie.androidide.themestore"
