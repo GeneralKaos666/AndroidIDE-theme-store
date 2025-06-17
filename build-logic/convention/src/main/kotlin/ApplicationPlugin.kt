@@ -30,6 +30,9 @@ class ApplicationPlugin : Plugin<Project> {
 
                     multiDexEnabled = true
                     vectorDrawables.useSupportLibrary = true
+                }
+
+                compileOptions {
                     isCoreLibraryDesugaringEnabled = true
                 }
 

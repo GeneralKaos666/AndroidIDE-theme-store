@@ -43,11 +43,7 @@ gradlePlugin {
         }
         register("themestore.detekt") {
             id = "themestore.detekt"
-            implementationClass = "detektPlugin"
-        }
-        register("themestore.ksp") {
-            id = "themestore.ksp"
-            implementationClass = "kspPlugin"
+            implementationClass = "DetektPlugin"
         }
     }
 }
