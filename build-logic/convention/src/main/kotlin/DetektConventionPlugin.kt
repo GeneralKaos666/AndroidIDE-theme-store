@@ -1,4 +1,5 @@
 import moe.smoothie.androidide.themestore.convention.configureDetekt
+import moe.smoothie.androidide.themestore.convention.libs
 
 import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 

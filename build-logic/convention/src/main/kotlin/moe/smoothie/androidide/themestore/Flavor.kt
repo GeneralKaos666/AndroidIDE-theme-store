@@ -15,8 +15,8 @@ enum class FlavorDimension {
 // These two product flavors reflect this behaviour.
 @Suppress("EnumEntryName")
 enum class Flavor(val dimension: FlavorDimension, val applicationIdSuffix: String? = null) {
-    debug(FlavorDimension.contentType, applicationIdSuffix = ".debug"),
-    test(FlavorDimension.contentType),
+    demo(FlavorDimension.contentType, applicationIdSuffix = ".demo"),
+    prod(FlavorDimension.contentType),
 }
 
 fun configureFlavors(
@@ -30,7 +30,7 @@ fun configureFlavors(
 
         productFlavors {
             Flavor.values().forEach { flavor ->
-                register(Flavor.name) {
+                register(flavor.name) {
                     dimension = flavor.dimension.name
                     flavorConfigurationBlock(this, flavor)
                     if (this@apply is ApplicationExtension && this is ApplicationProductFlavor) {
