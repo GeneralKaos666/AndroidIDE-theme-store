@@ -1,8 +1,13 @@
 [versions]
 accompanist = "0.37.0"
 androidDesugarJdkLibs = "2.1.5"
-androidGradlePlugin = "8.9.0"
+#<<<<<<< renovate/androidxlintgradle
+#androidGradlePlugin = "8.9.0"
 androidxLintGradle = "1.0.0-alpha05"
+#=======
+androidGradlePlugin = "8.10.1"
+#androidxLintGradle = "1.0.0-alpha03"
+#>>>>>>> master
 androidTools = "31.10.1"
 androidxAnnontation = "1.9.1"
 androidxAppCompat = "1.7.1"
