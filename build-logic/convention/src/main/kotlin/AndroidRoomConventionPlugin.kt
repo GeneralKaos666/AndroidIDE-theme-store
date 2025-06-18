@@ -1,4 +1,4 @@
-/)package moe.smoothie.androidide.themestore.convention
+//)package moe.smoothie.androidide.themestore.convention
 
 import androidx.room.gradle.RoomExtension
 import com.google.devtools.ksp.gradle.KspExtension
